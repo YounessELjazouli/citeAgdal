@@ -1,0 +1,47 @@
+.footer{
+    margin-top: 5em;
+    padding: 10em;
+    padding-bottom: 5em;
+    padding-top: 5em;
+    background:repeating-radial-gradient(circle at center center, transparent 0px, transparent 11px,rgba(255,255,255,0.04) 11px, rgba(255,255,255,0.04) 19px,transparent 19px, transparent 29px,rgba(255,255,255,0.04) 29px, rgba(255,255,255,0.04) 33px),repeating-radial-gradient(circle at center center, rgb(250,151,21) 0px, rgb(250,151,21) 5px,rgb(250,151,21) 5px, rgb(250,151,21) 17px,rgb(250,151,21) 17px, rgb(250,151,21) 30px,rgb(250,151,21) 30px, rgb(250,151,21) 43px,rgb(250,151,21) 43px, rgb(250,151,21) 45px,rgb(250,151,21) 45px, rgb(250,151,21) 47px); background-size: 53px 53px; ;
+}
+/* change the size of the logo in the footer */
+.footerLogo{
+    width: 25vh;
+    height: 25vh;
+}
+/*Change the display of the links to block */
+.footerLinks{
+    display: flex;
+    flex-direction: column;
+}
+.footerLinks h3{
+    width: fit-content;
+    color: #000;
+    border-bottom: 5px solid #000;
+}
+.footerLinks a{
+    color: #fff;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3em;
+    text-decoration: none;
+    margin-block:0.5em ;
+}
+/*When the mouse is over the links their color change to #15d8fa and an underline appears */
+.footerLinks a:hover{
+    color: #15d8fa;
+    text-decoration: underline;
+}
+
+/* the Copyright section : centeralize the element and add change the color, the bg-color, the height and the font  */
+.ownership{
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    background: #fff;
+    color: #fa9715;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.7em;
+}

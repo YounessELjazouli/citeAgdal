@@ -1,0 +1,8 @@
+export const Action_Types = {
+    LOGIN:"LOGIN",
+    LOGOUT: "LOGOUT",
+    ADD_USER : "ADD_USER",
+    SELECTED_USERS : "SELECTED_USERS",
+    DELETE_SELECTED_USERS : "DELETE_SELECTED_USERS",
+
+}

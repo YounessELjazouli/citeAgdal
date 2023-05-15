@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .headerNav{
+    height: 18.5vh;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.25);
+    background-image: repeating-radial-gradient(circle at center center, transparent 0px, transparent 11px,rgba(255,255,255,0.04) 11px, rgba(255,255,255,0.04) 19px,transparent 19px, transparent 29px,rgba(255,255,255,0.04) 29px, rgba(255,255,255,0.04) 33px),repeating-radial-gradient(circle at center center, rgb(250,151,21) 0px, rgb(250,151,21) 5px,rgb(250,151,21) 5px, rgb(250,151,21) 17px,rgb(250,151,21) 17px, rgb(250,151,21) 30px,rgb(250,151,21) 30px, rgb(250,151,21) 43px,rgb(250,151,21) 43px, rgb(250,151,21) 45px,rgb(250,151,21) 45px, rgb(250,151,21) 47px); background-size: 53px 53px;
+}
+/*resize the logo images */
+.logo1 img{
+    width: 12em;
+    height: 15vh;
+    position: relative;
+    left: 25%;
+}
+
+.logo2 img{
+    width: 350px;
+    height: 15vh; 
+}
+.navbar-nav {
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.25);
+
+}
+/*Adjustng the navigation's links font and Color*/
+.navbar-nav a{
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    text-decoration: none !important;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+}
+/* to display the orange lines between the links */
+.afterStyle::after{
+    content: "";
+    border-right: 2px solid #fa9715;
+    margin-left:6px;
+    height: 4em;
+}
+/* adjust the position of the lines after dropdown links */ 
+.ajdustAS{
+    position: relative;
+    top: 8px;
+}
+/* make the header (the one with the logos) invisible on small devices
++ also hide the lines between links and align them in the center
+*/ 
+@media only screen and (max-width: 900px){
+    .headerNav{
+        display:none;
+    }
+    .afterStyle::after{
+        display: none;
+    }
+    
+    .my-navbar a, .my-navbar svg{
+        text-align: center ;
+    }
+
+    
+}
+/* Center the home icon  */
+.homeIcon{
+    width: 3em;
+    min-height: 4vh;
+    border-radius: 10px;
+    background-color:#fa9715 !important;
+    border: none !important;
+}
+.homeIcon svg{
+    text-align: center;
+    padding: 10%;
+}
+/* remove the :after that was already applied (line 28) to all the links */
+.homeIcon::after{
+    display: none;
+}
+/* When th mouse is over this buttons their background color will change to #15d8fa*/
+.homeIcon:hover{
+    background-color: #15d8fa !important;
+    transform: scale(1.2,1.2);
+}
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <header className='headerNav container-fluid' >
+          <div className="row justify-content-around">
+            <div className="logo1 col-md-4 mt-2 ">
+              <img src={logo1} alt='logo onousc' />
+            </div>
+            <div className="logo2 col-md-3 mt-2">
+              <img src={logo2} alt='logo onousc' />
+            </div>
+          </div>
+  
+        </header>
+  
+        <Navbar className="my-navbar" bg="transparent" variant="light" expand="lg">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mx-auto">
+  
+              <Nav.Link className='afterStyle homeIcon'>
+                <Link to="/">
+                  <FontAwesomeIcon className='navHomeIcon' icon={solid('home')} size="lg" color='white' />
+                </Link>
+              </Nav.Link>
+  
+              <Nav.Link>
+                <Link to="#link" className='afterStyle'>Historique</Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="#link" className='afterStyle'>Services</Link>
+              </Nav.Link>
+              <Nav.Link>
+              <Link to="#link" className='afterStyle'>Publications</Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="/contact" className='afterStyle'>Contact</Link>
+              </Nav.Link>
+  
+  
+            </Nav>
+  
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
+</body>
+</html>

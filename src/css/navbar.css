@@ -1,0 +1,141 @@
+:root {
+    --primary: #FF800F;
+    --secondary: #001064;
+    --light: #F6F7F8;
+    --dark: #010A35;
+}
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Merriweather', sans-serif;
+}
+.headerNavWrapper{
+    z-index: -999 !important;
+}
+.headerNav{
+    height: 18.5vh;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.25);
+    background-image: repeating-radial-gradient(circle at center center, transparent 0px, transparent 11px,rgba(255,255,255,0.04) 11px, rgba(255,255,255,0.04) 19px,transparent 19px, transparent 29px,rgba(255,255,255,0.04) 29px, rgba(255,255,255,0.04) 33px),repeating-radial-gradient(circle at center center, rgb(250,151,21) 0px, rgb(250,151,21) 5px,rgb(250,151,21) 5px, rgb(250,151,21) 17px,rgb(250,151,21) 17px, rgb(250,151,21) 30px,rgb(250,151,21) 30px, rgb(250,151,21) 43px,rgb(250,151,21) 43px, rgb(250,151,21) 45px,rgb(250,151,21) 45px, rgb(250,151,21) 47px); background-size: 53px 53px;
+}
+/*resize the logo images */
+.logo1 img{
+    width: 12em;
+    height: 15vh;
+    position: relative;
+    left: 25%;
+}
+
+.logo2 img{
+    width: 350px;
+    height: 15vh; 
+}
+.navbar-nav {
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.25);
+
+}
+/*Adjustng the navigation's links font and Color*/
+.navbar-nav a{
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    text-decoration: none !important;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+}
+/* to display the orange lines between the links */
+.afterStyle::after{
+    content: "";
+    border-right: 2px solid #fa9715;
+    margin-left:6px;
+    height: 4em;
+}
+/* adjust the position of the lines after dropdown links */ 
+.ajdustAS{
+    position: relative;
+    top: 8px;
+}
+/* make the header (the one with the logos) invisible on small devices
++ also hide the lines between links and align them in the center
+*/ 
+@media only screen and (max-width: 900px){
+    .headerNav{
+        display:none;
+    }
+    .afterStyle::after{
+        display: none;
+    }
+    
+    .my-navbar a, .my-navbar svg{
+        text-align: center ;
+    }
+
+    
+}
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+.navbar .navbar-brand img {
+    max-height: 60px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-left: 25px;
+    padding: 10px 0;
+    color: #696E77;
+    font-weight: 400;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-brand img {
+        max-height: 45px;
+    }
+
+    .navbar .navbar-nav {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        padding-left: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
