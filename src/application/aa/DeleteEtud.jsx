@@ -2,7 +2,7 @@ import "../../css/dashboard.css"
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import Header from "./Header";
+import Header from "../Header";
 import SideBar from "./SideBar";
 
 const DeleteEtud = () => {

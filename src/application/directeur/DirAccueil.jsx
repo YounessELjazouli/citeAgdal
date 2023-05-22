@@ -6,7 +6,7 @@ import Pagination from 'react-pagination-library';
 import 'react-pagination-library/build/css/index.css';
 import StatsSections from "../aa/StatsSections";
 import SideBar from "./SideBar";
-import Header from "./Header";
+import Header from "../Header";
 
 const DirAccueil = () => {
 

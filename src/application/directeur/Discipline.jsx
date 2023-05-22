@@ -4,7 +4,7 @@ import Violation from './Violation';
 import Punition from './Punition';
 import axios from 'axios';
 import SideBar from './SideBar';
-import Header from './Header';
+import Header from "../Header";
 
 function Discipline() {
     const [selectedButton, setSelectedButton] = useState(null);

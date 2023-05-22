@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import SideBar from "./SideBar";
-import Header from "./Header";
+import Header from "../Header";
 import { Form } from 'react-bootstrap';
 
 const Accounts = () => {

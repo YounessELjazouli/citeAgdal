@@ -4,7 +4,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Form, Button } from 'react-bootstrap';
 import SideBar from "./SideBar";
-import Header from "./Header";
+import Header from "../Header";
+
 const Annonces = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');

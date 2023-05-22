@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "aos": "^2.3.4",
     "axios": "^1.2.1",
     "babel-plugin-macros": "^3.1.0",
     "bootstrap": "^5.2.3",
@@ -29,6 +30,7 @@
     "recharts": "^2.5.0",
     "redux": "^4.2.1",
     "sweetalert2": "^11.6.16",
+    "typewriter-effect": "^2.19.0",
     "web-vitals": "^2.1.4",
     "xlsx": "^0.18.5"
   },
@@ -58,6 +60,7 @@
     ]
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "concurrently": "^7.6.0"
   }
 }

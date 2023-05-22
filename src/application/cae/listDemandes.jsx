@@ -6,7 +6,7 @@ import Pagination from 'react-pagination-library';
 import 'react-pagination-library/build/css/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
-import Header from './Header';
+import Header from "../Header";
 import SideBar from './SideBar';
 
 

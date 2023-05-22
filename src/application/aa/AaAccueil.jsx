@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import Pagination from 'react-pagination-library';
 import 'react-pagination-library/build/css/index.css';
 import StatsSections from "./StatsSections";
-import Header from "./Header";
+import Header from "../Header";
 import SideBar from "./SideBar";
 
 const AaAccueil = () => {

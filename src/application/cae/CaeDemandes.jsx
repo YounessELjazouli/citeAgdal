@@ -5,10 +5,8 @@ import * as XLSX from "xlsx";
 import axios from "axios";
 import Swal from "sweetalert2";
 import StatsSections from "../aa/StatsSections";
-import Header from './Header';
+import Header from "../Header";
 import SideBar from './SideBar';
-
-
 
 const CaeDemandes = () => {
   const [excelFile, setExcelFile] = useState(null);

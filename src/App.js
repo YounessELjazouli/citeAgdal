@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation} from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from './pages/Contact';
 import Login from './pages/Login';
@@ -28,7 +28,7 @@ import Discipline from './application/directeur/Discipline';
 function App() {
   const isAuthenticated = localStorage.getItem('authentificated');
   const typeUser = localStorage.getItem('typeUser');
-
+ 
   return (
 
     <div className="App">
@@ -40,6 +40,7 @@ function App() {
           <Route exact path="/publications" element={<Publications />} />
           <Route exact path="/historique" element={<Historique />} />
           <Route exact path="/services" element={<Services />} />
+          <Route exact path="/admin/null/accueil" element={<Login />} />
 
 
           <Route  path="/admin/cae/accueil" element={isAuthenticated && typeUser === "cae" ? <CaeDemandes /> : <Navigate to="/login" />}  />

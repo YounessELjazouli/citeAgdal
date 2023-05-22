@@ -4,7 +4,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
-import Header from './Header';
+import Header from "../Header";
 import SideBar from './SideBar';
 
 function Indisciplines() {

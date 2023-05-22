@@ -1,0 +1,75 @@
+version: '3'
+services:
+  laravel-api:
+    restart: unless-stopped
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    volumes:
+      - ./server:/var/www/html
+    working_dir: /var/www/html
+    environment:
+      MYSQL_DATABASE: citeUniv
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: youness
+      MYSQL_USER: youness
+    networks:
+      - app_network
+      - db
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8000:80"
+      - "443:443"
+    networks:
+      - app_network
+    volumes:
+      - ./server:/var/www/html
+      - ./server/nginx/conf.d/:/etc/nginx/conf.d/
+
+  react-frontend:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+    depends_on:
+      - laravel-api
+    networks:
+      - app_network
+
+  mysql:
+    restart: unless-stopped
+    image: mysql:latest
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: citeUniv
+      MYSQL_USER: youness
+      MYSQL_PASSWORD: youness
+    networks:
+      - db
+
+  phpmyadmin:
+    restart: unless-stopped
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '8081:80'
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - mysql
+    networks:
+      - db
+networks:
+  app_network:
+    driver: bridge
+  db:

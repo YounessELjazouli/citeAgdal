@@ -4,10 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Annonces;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 
 class AnnoncesController extends Controller
 {
+    public function index() {
+        $currentDate = date('Y-m-d'); // Get the current date
+
+        $annonces = Annonces::where('startDate', '<=', $currentDate)
+            ->where('endDate', '>=', $currentDate)
+            ->get();
+        foreach ($annonces as $annonce) {
+            $attachement = $annonce->attachements;
+            $path = storage_path('app/public/' . $attachement);
+
+            if (!File::exists($path)) {
+                abort(404);
+            }
+    
+            $annonce['media'] = asset('storage/' . $attachement); // Assign the photo link directly to the 'media' attribute
+
+        }
+        return response()->json(["annonces" => $annonces ]);
+    }
     public function postAnnonce(Request $request)
     {
         try {
@@ -39,6 +59,11 @@ class AnnoncesController extends Controller
         } catch (\Throwable $th) {
             error_log($th);
         }
+    }
+
+    public function show($id) {
+        $annonceDetails = Annonces::where('id',$id)->get();
+        return response()->json(["details" => $annonceDetails ]);
     }
 
 }

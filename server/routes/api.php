@@ -35,6 +35,7 @@ use App\Http\Controllers\DecisionsController;
 //     //  routes that require authentification : 
     
 // });
+Route::view('/','welcome');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout/{email}', [AuthController::class, 'logout']);
 Route::post('/addUser', [AuthController::class, 'addUser']);
@@ -99,6 +100,8 @@ Route::get('/cityRes',[StatsController::class,'residencesPerCity']);
 Route::get('/cycleEtudes',[StatsController::class,'cycleEtudes']);
 
 Route::post('/postAnnonce',[AnnoncesController::class,'postAnnonce']);
+Route::get('/annonces',[AnnoncesController::class,'index']);
+Route::get('/annonces/{id}',[AnnoncesController::class,'show']);
 
 
 

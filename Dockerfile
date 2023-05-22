@@ -1,40 +1,23 @@
-# base image
-FROM php:7.4-fpm-alpine
+# Use the official Node.js image as the base image
+FROM node:14-alpine
 
-# set working directory
-WORKDIR /var/www/html/server
+# Set the working directory
+WORKDIR /app
 
-# install dependencies
-RUN apk update && apk add --no-cache \
-    build-base \
-    libzip-dev \
-    oniguruma-dev \
-    unzip \
-    zip \
-    && docker-php-ext-install \
-    pdo \
-    pdo_mysql \
-    && docker-php-ext-configure zip \
-    && docker-php-ext-install zip
+# Copy the package.json and package-lock.json files
+COPY package*.json ./
 
-# copy source code
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application files
 COPY . .
 
-# install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# Build the React application
+RUN npm run build
 
-# install dependencies
-RUN composer install --no-scripts --no-autoloader
+# Expose port 3000 (default for React development server)
+EXPOSE 3000
 
-# copy configuration files
-COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
-COPY ./docker/php/php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf
-
-# generate autoload files
-RUN composer dump-autoload --no-scripts --optimize
-
-# expose port 9000
-EXPOSE 9000
-
-# start php-fpm
-CMD ["php-fpm"]
+# Start the React application
+CMD ["npm", "start"]

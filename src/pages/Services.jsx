@@ -6,7 +6,14 @@ function Services() {
   return (
     <div>
       <NavBar />
-      Services
+      Services : 
+      Restauration 
+      Terrain de Sport 
+      Centre médical 
+      salle d'etude
+      Bibliothéque 
+      Caféteria 
+      Bureau Amoe
       <Footer />
     </div>
   )

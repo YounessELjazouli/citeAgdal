@@ -5,7 +5,7 @@ import 'react-pagination-library/build/css/index.css';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
-import Header from './Header';
+import Header from "../Header";
 import SideBar from './SideBar';
 
 const ListeAttente = () => {

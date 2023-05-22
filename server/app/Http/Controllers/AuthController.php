@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 
 
 class AuthController extends Controller
@@ -99,11 +101,19 @@ class AuthController extends Controller
 
     public function getPhoto($photoName)
     {
-        $photoPath = storage_path("app/profile/{$photoName}");
-        if (!file_exists($photoPath)) {
+        $path = storage_path('app/profile/' . $photoName);
+
+        if (!File::exists($path)) {
             abort(404);
         }
-        return response()->file($photoPath);
+
+        $file = File::get($path);
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+
+        return $response;
     }
 
     public function listUsers()

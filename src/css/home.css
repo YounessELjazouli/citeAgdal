@@ -221,3 +221,50 @@ h4,.h4{font-size:calc(1.275rem + .3vw)}@media (min-width: 1200px){h4,.h4{font-si
 h5,.h5{font-size:1.25rem}
 h6,.h6{font-size:1rem}
 p{margin-top:0;margin-bottom:1rem !important}
+
+.historyText{
+  font-size: 1.5em;
+  padding: 1em;
+  font-weight: 900;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+@media (max-width: 768px) {
+  .grid-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+
+.hiddenLis {
+  background: linear-gradient(to bottom right, #ff6b6b, #3a1c71);
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hiddenLis:hover {
+  transform: scale(1.1);
+}
+
+.hiddenLis:nth-child(2n) {
+  background: linear-gradient(to bottom right, #fee5f4, #64575f);
+}
+
+.hiddenLis:nth-child(2n+1) {
+  background: linear-gradient(to bottom right, #373738, #717070);
+}
+.hiddenLis.last {
+  grid-column: 2 / 3;
+  justify-self: center;
+}

@@ -2,7 +2,7 @@ import "../../css/dashboard.css"
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import Header from './Header';
+import Header from "../Header";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts';
 import SideBar from "./SideBar";
 

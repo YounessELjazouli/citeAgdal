@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import Header from './Header';
+import Header from "../Header";
 import SideBar from './SideBar';
 
 const ListePrincipale = () => {
