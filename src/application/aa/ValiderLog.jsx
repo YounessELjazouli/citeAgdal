@@ -69,7 +69,7 @@ const ValiderLog = () => {
 
           <div class="page-header">
             <h1>Dashboard</h1>
-            <small>Home / Dashboard</small>
+            <small>Espace Assistant(e) Administratif(e) / Finaliser l'inscription</small>
           </div>
 
           <div class="page-content">

@@ -57,7 +57,7 @@ const AaAccueil = () => {
 
                     <div class="page-header">
                         <h1>Dashboard</h1>
-                        <small>Home / Dashboard</small>
+                        <small>Espace Assistant(e) Administratif(e) / Accueil</small>
                     </div>
 
                     <div class="page-content">

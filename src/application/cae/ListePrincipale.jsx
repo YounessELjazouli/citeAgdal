@@ -88,7 +88,7 @@ const ListePrincipale = () => {
     
                 <div class="page-header">
                     <h1>Dashboard</h1>
-                    <small>Home / Dashboard</small>
+                    <small>Espace Chef D'affaires Etudiantes / Liste Principale</small>
                 </div>
     
                 <div class="page-content">
@@ -142,7 +142,7 @@ const ListePrincipale = () => {
                                                     <td>{demande.cin}</td>
                                                     <td>{demande.revenueAnuelle}</td>
                                                     <td>{demande.nouvelResident}</td>
-                                                    <td>{demande.nombreAnnee}</td>
+                                                    <td>{demande.handicapé}</td>
                                                     <td>{demande.provinceParents}</td>
                                                     <td>{demande.dateNaissance}</td>
                                                     <td style={{ "display": "flex", "flexDirection": "row" }}>

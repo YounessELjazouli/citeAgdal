@@ -5,6 +5,8 @@ import Swal from 'sweetalert2';
 import SideBar from "./SideBar";
 import Header from "../Header";
 import { Form } from 'react-bootstrap';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const Accounts = () => {
     const [toggleAddUser, setToggleAddUser] = useState(false)
@@ -36,7 +38,6 @@ const Accounts = () => {
 
         try {
             const response = await axios.post('http://localhost:8000/api/addUser', user);
-            console.log(response.data);
             Swal.fire({ title: 'User added successfully!', icon: "success" });
             setName('');
             setEmail('');
@@ -45,7 +46,6 @@ const Accounts = () => {
             setConfirmPassword('');
             handleToggleAddUser();
         } catch (error) {
-            console.error(error);
             alert('Failed to add user.');
         }
 
@@ -55,6 +55,13 @@ const Accounts = () => {
             setListU(response.data.listUsers);
         })
     }, [])
+
+    const updateUser = (id) => {
+        alert(id)
+    }
+    const deleteUser = (id) => {
+        alert(id)
+    }
 
     return (
         <div>
@@ -66,7 +73,7 @@ const Accounts = () => {
 
                     <div class="page-header">
                         <h1>Dashboard</h1>
-                        <small>Home / Dashboard</small>
+                        <small>Espace Directeur|Directrice / Gérer les comptes</small>
                     </div>
 
                     <div class="page-content">
@@ -193,8 +200,21 @@ const Accounts = () => {
                                                     <td>{user.name}</td>
                                                     <td>{user.email}</td>
                                                     <td>{user.typeUser === "cae" ? "Chef D'affaire Etudiantes" : user.typeUser === "aa" ? "Assisstant administrative" : "Directeur"}</td>
-                                                    <td>update</td>
-                                                    <td>delete</td>
+                                                    <td>
+                                                        <button onClick={() => {updateUser(user.id)}} 
+                                                            className="btn btn-warning"
+                                                        >
+                                                            <FontAwesomeIcon icon={solid('refresh')} />
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                    <button onClick={() => {deleteUser(user.id)}} 
+                                                            className="btn btn-danger"
+                                                        >
+                                                            <FontAwesomeIcon icon={solid('trash')} />
+
+                                                        </button>
+                                                    </td>
                                                 </tr>
                                             )
                                         })

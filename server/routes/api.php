@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnnoncesController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListDemandesController;
@@ -61,6 +62,7 @@ Route::resource('listC',ChambresController::class);
 Route::resource('listV',ViolationsController::class);
 Route::resource('listPu',PunitionsController::class);
 Route::resource('listD',DecisionsController::class);
+Route::resource('contacts',ContactController::class);
 
 Route::post('/data',[ListDemandesController::class,'storeAllData']);
 

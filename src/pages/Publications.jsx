@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import Footer from './Footer';
 import axios from 'axios';
+import TypeWriter from 'typewriter-effect'
 
 function Publications() {
   const [annonces, setAnnonces] = useState([]);
@@ -15,17 +16,18 @@ function Publications() {
   }, [])
 
   const detail = async (id, image) => {
-     axios.get(`http://localhost:8000/api/annonces/${id}`).then((response) => {
-       const detailsWithImage = { ...response.data.details, image };
-      setDetails([detailsWithImage]);
-      
+    axios.get(`http://localhost:8000/api/annonces/${id}`).then((response) => {
+      setDetails(response.data.details);
+      setphotoDetail(image);
+
+      setTimeout(() => {
+        setShowDetail(true);
+        console.log(details);
+      }
+        , 1000)
     })
-    setTimeout(() => {
-      setShowDetail(true);
-      console.log(details);
-    }
-    ,1000)
-    
+
+
   }
 
   const retour = () => {
@@ -35,6 +37,14 @@ function Publications() {
   return (
     <div>
       <NavBar />
+      <div className="text-center text-light bg-dark h1">
+        <TypeWriter options={{
+          autoStart: true,
+          loop: true,
+          delay: 300,
+          strings: ["Publications"]
+        }} />
+      </div>
       {
         !showDetail &&
         <div className="container">
@@ -66,7 +76,7 @@ function Publications() {
               details.map((d) => {
                 return (
                   <div class="card col-md-8" >
-                    <img src={d.file} class="card-img-top" alt="..." width={80} height={390} />
+                    <img src={photoDetail} class="card-img-top" alt="..." width={80} height={390} />
                     <div class="card-body">
                       <h5 class="card-title">{d.title}</h5>
                       <p class="card-text">{d.body}</p>

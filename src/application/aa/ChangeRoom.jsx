@@ -81,7 +81,7 @@ const ChangeRoom = () => {
 
           <div class="page-header">
             <h1>Dashboard</h1>
-            <small>Home / Dashboard</small>
+            <small>Espace Assistant(e) Administratif(e) / Changement de chambre</small>
           </div>
 
           <div class="page-content">

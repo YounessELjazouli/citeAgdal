@@ -55,7 +55,7 @@ const DeleteEtud = () => {
 
           <div class="page-header">
             <h1>Dashboard</h1>
-            <small>Home / Dashboard</small>
+            <small>Espace Assistant(e) Administratif(e) / Départ de cité</small>
           </div>
 
           <div class="page-content">

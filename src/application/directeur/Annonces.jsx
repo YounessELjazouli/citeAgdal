@@ -45,7 +45,7 @@ const Annonces = () => {
 
                     <div class="page-header">
                         <h1>Dashboard</h1>
-                        <small>Home / Dashboard</small>
+                        <small>Espace Directeur|Directrice / Publier les annonces</small>
                     </div>
 
                     <div class="page-content">
